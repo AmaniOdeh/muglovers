@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact Us - MugLovers</title>
+    <link rel="stylesheet" href="global.css" />
+
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="logo"><i class="fas fa-mug-hot"></i> MugLovers</div>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home <i class="fas fa-home"></i></a></li>
+            <li><a href="products.html">Products <i class="fas fa-box"></i></a></li>
+            <li><a href="about.html">About Us <i class="fas fa-users"></i></a></li>
+            <li><a href="contact.html">Contact <i class="fas fa-envelope"></i></a></li>
+            <li><a href="privacy.html">Privacy <i class="fas fa-shield-alt"></i></a></li>
+            <li><a href="tems&condition.html">Terms <i class="fas fa-file-contract"></i></a></li>
+
+        </ul>
+    </nav>
+</header>
+<section class="contact-section">
+    <div class="contact-box animate">
+        <div class="icon-box">
+            <i class="fas fa-envelope fa-4x"></i>
+        </div>
+        <h2>Get in touch</h2>
+        <p class="subtext">We’re happy to hear from you! Your messages are always welcome and we’ll get back to you as soon as possible.</p>
+
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
+
+<!-- ✅ POPUP WITH STARS -->
+<div class="popup-message" id="successPopup">
+    <div class="popup-content">
+        <span class="close-popup" onclick="closePopup()">&times;</span>
+        <h2>🎉 Thank you!</h2>
+        <p>Your message has been received. We’ll get back to you shortly.</p>
+
+        <div class="star-rating">
+            <span class="star" data-rating="1">&#9733;</span>
+            <span class="star" data-rating="2">&#9733;</span>
+            <span class="star" data-rating="3">&#9733;</span>
+            <span class="star" data-rating="4">&#9733;</span>
+            <span class="star" data-rating="5">&#9733;</span>
+        </div>
+        <p id="rating-msg" class="rating-msg"></p>
+
+
+    </div>
+</div>
+
+<!-- ✅ SCRIPT -->
+<script>
+    const form = document.getElementById("contactForm");
+    const popup = document.getElementById("successPopup");
+    const stars = document.querySelectorAll(".star-rating .star");
+    const ratingMsg = document.getElementById("rating-msg");
+
+    let currentRating = 0;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // عرض النافذة
+        popup.style.display = "flex";
+
+        // تفريغ الفورم والتقييم
+        form.reset();
+        stars.forEach(s => s.classList.remove("selected"));
+        ratingMsg.textContent = "";
+        currentRating = 0;
+    });
+
+    stars.forEach(star => {
+        star.addEventListener("click", () => {
+            const rating = parseInt(star.getAttribute("data-rating"));
+            currentRating = rating;
+
+            // تلوين النجوم المختارة
+            stars.forEach(s => s.classList.remove("selected"));
+            for (let i = 0; i < rating; i++) {
+                stars[i].classList.add("selected");
+            }
+
+            // رسالة التقييم
+            const messages = {
+                1: "Oh no 😢 – We'll do better!",
+                2: "Hmm... Thank you for the feedback!",
+                3: "Thanks! We’re working to improve.",
+                4: "Great! We're glad you liked it.",
+                5: "⭐ WOW! You're amazing – thanks!"
+            };
+
+            ratingMsg.textContent = messages[rating];
+
+            setTimeout(() => {
+                if (currentRating > 0) {
+                    closePopup();
+                }
+            }, 4000);
+
+        });
+    });
+
+    function closePopup() {
+        popup.style.display = "none";
+    }
+</script>
+
+
+<!-- ✅ FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <p>Email: amaniodeh225@gmail.com</p>
+            <p>Phone: +972 52-637-5279</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 MugLovers. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

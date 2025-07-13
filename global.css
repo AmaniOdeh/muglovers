@@ -1,0 +1,203 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: #7b5e57;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    position: relative;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #ffd6a5;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #7b5e57;
+    color: #fff;
+    padding: 40px 30px 20px;
+    margin-top: 80px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center; /* ← يوسّط الأعمدة */
+    align-items: center;
+    text-align: center;       /* ← يخلي النصوص بالنص */
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px; /* ← يمنعهم من التمدد كثير */
+}
+
+
+.footer-column h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-column .social a {
+    margin-right: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column .social a:hover {
+    color: #ffd6a5;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 15px;
+}
+
+/* Responsive tweaks للهيدر والفوتر */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .logo {
+        font-size: 1.4rem;
+    }
+}
+/* ✅ الصور والفيديوهات تتجاوب */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ✅ النماذج Forms */
+form input, form textarea, form button {
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+/* ✅ عناصر السلايدر */
+.main-image {
+    height: auto;
+    min-height: 200px;
+}
+
+.thumbnails {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* ✅ تحسين عرض الـ Popup على الجوال */
+.popup-message {
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    width: 90%;
+    max-width: 400px;
+}
+
+/* ✅ بشكل عام – تنسيق الحاويات في الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .contact-section,
+    .about-section,
+    .slider-container {
+        padding: 30px 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-box,
+    .about-section p {
+        width: 100%;
+    }
+
+    .footer-column {
+        max-width: 100%;
+    }
+}

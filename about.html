@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Us | MugLovers</title>
+    <link rel="stylesheet" href="global.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="about.css" />
+
+
+</head>
+
+<body>
+<header class="navbar">
+    <div class="logo"><i class="fas fa-mug-hot"></i> MugLovers</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home <i class="fas fa-home"></i></a></li>
+            <li><a href="products.html">Products <i class="fas fa-box"></i></a></li>
+            <li><a href="about.html">About Us <i class="fas fa-users"></i></a></li>
+            <li><a href="contact.html">Contact <i class="fas fa-envelope"></i></a></li>
+            <li><a href="privacy.html">Privacy <i class="fas fa-shield-alt"></i></a></li>
+            <li><a href="tems&condition.html">Terms <i class="fas fa-file-contract"></i></a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<section class="about-section">
+    <div class="about-content">
+        <div class="text-side">
+            <h1>About MugLovers</h1>
+            <p>MugLovers isn’t just a store — it’s a cozy lifestyle brand crafted for those who savor every sip with love and warmth ☕.</p>
+            <p>We design personalized, aesthetic mugs to make your everyday coffee or tea moments magical. Whether you're a collector or just love a beautiful cup, MugLovers brings your mug dreams to life.</p>
+            <p>Since 2025, we’ve grown from a small team of passionate designers into a warm community where art and coffee blend in every cup. ❤️</p>
+        </div>
+
+        <div class="slider-side">
+            <div class="slider-container">
+                <div class="main-image" id="mainImage" style="background-image: url('./images/slide11home.jpeg');"></div>
+                <div class="thumbnails">
+                    <img src="./images/slide11home.jpeg" onclick="changeSlide(this)" />
+                    <img src="./images/slide22home.jpeg" onclick="changeSlide(this)" />
+                    <img src="./images/slide33home.jpeg" onclick="changeSlide(this)" />
+                    <img src="./images/slide44home.jpeg" onclick="changeSlide(this)" />
+                    <img src="./images/slide55home.jpeg" onclick="changeSlide(this)" />
+                    <img src="./images/slide66home.jpeg" onclick="changeSlide(this)" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <p>Email: amanicode225@gmail.com</p>
+            <p>Phone: +972 52-637-5279</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 MugLovers. All rights reserved.</div>
+</footer>
+<script>
+    let currentIndex = 0;
+    const images = [
+        './images/slide11home.jpeg',
+        './images/slide22home.jpeg',
+        './images/slide33home.jpeg',
+        './images/slide44home.jpeg',
+        './images/slide55home.jpeg',
+        './images/slide66home.jpeg'
+    ];
+
+    const mainImage = document.getElementById('mainImage');
+
+    function changeSlide(img) {
+        mainImage.style.backgroundImage = `url('${img.src}')`;
+        currentIndex = images.indexOf(img.src);
+    }
+
+    // Auto Slide
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        mainImage.style.backgroundImage = `url('${images[currentIndex]}')`;
+    }, 4000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: url('./images/mugs.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 20, 10, 0.65); /* Dark overlay for readability */
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 90%;
+    padding: 20px;
+    color: #fffbe7;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #f8e8d2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: floatFadeTilt 4s ease-in-out infinite alternate;
+}
+
+h1 span {
+    color: #e0b080;
+}
+
+p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease forwards;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.btn {
+    padding: 14px 32px;
+    background-color: #e0b080;
+    color: #402c1a;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #402c1a;
+    transform: scale(1.05);
+}
+
+/* Advanced Animation: float + fade + rotate + scale */
+@keyframes floatFadeTilt {
+    0% {
+        transform: translateY(20px) rotate(0deg) scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-8px) rotate(-1deg) scale(1.02);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px) rotate(1deg) scale(1);
+        opacity: 0.9;
+    }
+}
+
+/* Fade In for Paragraph */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.4em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .btn {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+}
+
+

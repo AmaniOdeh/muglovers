@@ -1,0 +1,26 @@
+.privacy-section {
+    max-width: 900px;
+    margin: 80px auto 60px;
+    padding: 20px;
+    background-color: #ffffffc9;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #3e2e26;
+}
+
+.privacy-section h1 {
+    text-align: center;
+    color: #6a4e42;
+    margin-bottom: 25px;
+}
+
+.privacy-section h2 {
+    margin-top: 25px;
+    color: #5c4338;
+}
+
+.privacy-section p {
+    margin-bottom: 15px;
+}
