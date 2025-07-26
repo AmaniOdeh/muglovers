@@ -66,16 +66,19 @@ const grid = document.getElementById("productGrid");
 
 products.forEach(product => {
     const card = document.createElement("div");
-    card.className = "product-card";
+    card.className = "col-md-4 col-sm-6";
     card.innerHTML = `
-        <img src="${product.image}" alt="${product.name}" class="product-img" />
-        <h3>${product.name}</h3>
-        <p class="price">$${product.price.toFixed(2)}</p>
-        <div class="actions">
-            <button class="btn buy">Buy Now</button>
-            <button class="btn cart add-to-cart"><i class="fas fa-shopping-cart"></i> Add</button>
-        </div>
-    `;
+  <div class="product-card">
+    <img src="${product.image}" alt="${product.name}" class="product-img" />
+    <h3>${product.name}</h3>
+    <p class="price">$${product.price.toFixed(2)}</p>
+    <div class="actions">
+        <button class="btn buy">Buy Now</button>
+        <button class="btn cart add-to-cart"><i class="fas fa-shopping-cart"></i> Add</button>
+    </div>
+  </div>
+`;
+
     grid.appendChild(card);
 });
 
